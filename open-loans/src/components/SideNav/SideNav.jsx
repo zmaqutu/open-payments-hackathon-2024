@@ -1,14 +1,15 @@
 const SideNav = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>Overview</li>
-          <li>Transactions</li>
-          <li>Payments</li>
-        </ul>
-      </nav>
-      <hr />
+    <div className="sidenav">
+      <aside>
+        <nav>
+          <ul>
+            <li>Overview</li>
+            <li>Transactions</li>
+            <li>Payments</li>
+          </ul>
+        </nav>
+      </aside>
     </div>
   );
 };
