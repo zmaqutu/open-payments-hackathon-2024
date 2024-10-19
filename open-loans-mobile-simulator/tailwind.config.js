@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      wallPaperImage: {
+        'phoneBackground': "url('/src/assets/react.svg')",
+      },
+    },
   },
   plugins: [],
 }
