@@ -4,16 +4,20 @@ import {
   createAuthenticatedClient,
   isPendingGrant,
 } from "@interledger/open-payments";
+import fs from "fs";
 
-const DEBIT_AMOUNT = 500;
-const RECEIVE_AMOUNT = 300;
+const app = express();
+const PORT = 3000; // You can change this port as needed
 
-async function setupClient() {
+const DEBIT_AMOUNT = 100;
+const RECEIVE_AMOUNT = 100;
+
+async function setupClient(req, res) {
   try {
     const client = await createAuthenticatedClient({
       walletAddressUrl: "https://ilp.interledger-test.dev/pay-later",
       keyId: "fd37d668-95f3-452f-8e16-c399705f707a",
-      privateKey: "./private.key",
+      privateKey: fs.readFileSync("./private.key"),
     });
 
     const walletAddress = await client.walletAddress.get({
@@ -42,7 +46,7 @@ async function setupClient() {
           start: ["redirect"],
           finish: {
             method: "redirect",
-            uri: "",
+            uri: "http://localhost:3100",
             nonce: "ThisIsATestNonce",
           },
         },
@@ -52,15 +56,19 @@ async function setupClient() {
     if (!isPendingGrant(grant)) {
       throw new Error("Expected interactive grant");
     } else {
-      // Redirect user to grant.manage URL
       console.log("Redirect user to:", grant.access_token.manage);
       console.log("INCOMING_PAYMENT_ACCESS_TOKEN =", grant.access_token.value);
       console.log("GRANT", grant);
-      return;
+      return res.redirect(grant.access_token.manage);
     }
   } catch (error) {
     console.error("Error setting up client:", error);
+    return res.status(500).send("Error setting up client: " + error.message);
   }
 }
 
-setupClient();
+app.get("/transact", setupClient);
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
