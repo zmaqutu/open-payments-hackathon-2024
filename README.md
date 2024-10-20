@@ -82,15 +82,20 @@ This will start all the necessary servers locally on different ports
 
 ### 1. Cashier Dashboard
 
-1. Navigate to the cashier dashboard (http://localhost:3000/dashboard).
+1. Navigate to the cashier dashboard (http://localhost:5173/).
 2. The cashier creates a new profile for the user who wants to make a purchase.
 3. Input details like loan amount, repayment schedule, and grace period.
+   ![image](https://github.com/user-attachments/assets/2fee0e2c-1859-4567-9c6f-896bb0981edc)
 4. The user will receive a USSD confirmation request on their mobile phone.
 
 ### 2. USSD Loan Confirmation
 1. The customer receives a USSD prompt on their phone with the loan details.
 2. They can accept or reject the loan via the USSD menu.
 3. Once accepted, the loan is processed, and the transaction is recorded.
+
+
+![image](https://github.com/user-attachments/assets/1b119a68-0066-477a-8694-30ff98373565)
+   
 
 ### 3. Repayment
 1. The user will receive periodic reminders via USSD to repay the loan, with the system automatically adjusting based on the repayment schedule and grace periods.
