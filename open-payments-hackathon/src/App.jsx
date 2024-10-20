@@ -8,6 +8,8 @@ import AddUserForm from './components/AddUserForm/AddUser';
 import "./components/AddUserForm/AddUser.css"
 import ManageAccounts from './components/ManageAccounts/ManageAccounts';
 import "./components/ManageAccounts/ManageAccounts.css"
+import Hero from './components/Hero/Hero';
+import "./components/Hero/Hero.css"
 import './App.css';
 import { useState } from 'react'
 
@@ -19,6 +21,9 @@ function App() {
         <NavBar />
         <div className='middle-section'>
         <SideView setShowForm={setShowForm} setShowManageAccounts={setShowManageAccounts}/>
+        { !showForm && !showManageAccounts ?
+            <Hero/> : null
+      }
         {
           showForm && !showManageAccounts ?
           <AddUserForm />
