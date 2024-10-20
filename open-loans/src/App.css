@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,4 +15,8 @@ body {
     max-width: 700px;
     font-family: monospace;
     background-color: hsl(271, 71%, 66%);
+}
+
+li {
+    list-style: none;
 }
