@@ -5,16 +5,17 @@ function USSDPopup(props) {
 	console.log(props)
 	const [input, setInput] = useState('');
 
-	const handleSend = async (input) => {
+	const handleSend = async () => {
 		console.log('USSD Input:', input);
 		switch (input) {
 			case '1':
 				console.log('Accepted Loan Terms');
 				try {
 					// Send a request to the server to trigger the popup
-					const response = await fetch('http://localhost:5001/process-payment', {
+					const response = await fetch('http://localhost:5000/process-payment', {
 						method: 'GET', // Use GET if that's how your server is set up
 					});
+					console.log('Response:', response);
 
 					if (response.ok) {
 						// If the response is okay, the server should handle showing the popup

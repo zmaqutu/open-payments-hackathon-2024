@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install:all": "(npm install) && (cd open-payments-hackathon && npm install) && (cd open-loans-mobile-simulator/client && npm install) && (cd open-loans-mobile-simulator/server && npm install)",
-    "start:all": "concurrently \"cd open-payments-hackathon && npm run dev\" \"cd open-loans-mobile-simulator/client && npm run dev\" \"cd open-loans-mobile-simulator/server && node server.js\" \"cd open-payments-hackathon/src/backend && node phoneMessageServer.js\"",
+    "start:all": "concurrently \"cd open-payments-hackathon && npm run dev\" \"cd open-loans-mobile-simulator/client && npm run dev\" \"cd open-loans-mobile-simulator/server && node server.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

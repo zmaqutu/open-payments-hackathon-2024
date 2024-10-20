@@ -8,7 +8,14 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 import cors from 'cors';
-app.use(cors());
+// app.use(cors({
+// 	origin: 'http://localhost:5174', // Change this to your frontend's origin if different
+// 	methods: ['GET', 'POST'], // Specify the methods you're allowing
+// 	credentials: false// If you need to include cookies or authentication headers
+// }));
+app.use(cors({
+	origin: '*', // Allow all origins
+}));
 
 // Serve the frontend if needed
 app.use(express.static('public'));

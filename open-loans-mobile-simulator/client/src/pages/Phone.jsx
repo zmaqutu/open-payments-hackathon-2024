@@ -23,12 +23,15 @@ function Phone() {
       if (data.action === 'show-popup') {
         setIsPopupOpen(true);
       }
+      // else if (data.action === 'process-payment') {
+      //   console.log('Payment processing initiated');
+      // }
     };
 
     socket.onclose = () => {
       console.log('WebSocket connection closed');
     };
-  
+
     socket.onerror = (error) => {
       console.error('WebSocket error:', error);
     };
@@ -39,15 +42,15 @@ function Phone() {
   }, []);
 
   return (
-	<div className="bg-cover bg-center" style={{ backgroundImage: `url(${phoneBackground})` }}>
-    <Time />
-    <AppGrid />
-    <button
+    <div className="bg-cover bg-center" style={{ backgroundImage: `url(${phoneBackground})` }}>
+      <Time />
+      <AppGrid />
+      <button
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded-lg"
         onClick={handleOpenPopup}
       ></button>
       <USSDPopup open={isPopupOpen} handleClose={handleClosePopup} />
-  </div>
+    </div>
   )
 }
 

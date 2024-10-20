@@ -18,10 +18,22 @@ wss.on('connection', (ws) => {
   // Listen for a specific request to trigger the popup
   app.get('/trigger-popup', (req, res) => {
     // Send a message to all connected WebSocket clients
-	console.log('Inside trigger popup')
+    console.log('Inside trigger popup')
     wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
         client.send(JSON.stringify({ action: 'show-popup' }));
+      }
+    });
+
+    res.send('Popup triggered');
+  });
+
+  app.get('/process-payment', (req, res) => {
+    // Send a message to all connected WebSocket clients
+    console.log('Inside trigger popup')
+    wss.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify({ action: 'process-payment' }));
       }
     });
 
