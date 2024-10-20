@@ -1,4 +1,22 @@
 function AddUserForm() {
+    const handleFormSubmit = async () => {
+        try {
+            // Send a request to the server to trigger the popup
+            const response = await fetch('http://localhost:5000/trigger-popup', {
+                method: 'GET', // Use GET if that's how your server is set up
+            });
+
+            if (response.ok) {
+                // If the response is okay, the server should handle showing the popup
+                console.log('Popup triggered successfully');
+            } else {
+                console.error('Failed to trigger popup');
+            }
+        } catch (error) {
+            console.error('Error triggering popup:', error);
+        }
+    };
+
     return (
         <div>
             <form className="form">
@@ -16,7 +34,7 @@ function AddUserForm() {
                 <input type="text" id="repay-period" />
                 <label htmlFor="grace-period">Grace Period:</label>
                 <input type="text" id="grace-period" />
-                <button className="form-btn">Submit</button>
+                <button className="form-btn" onClick={handleFormSubmit}>Submit</button>
             </form>
         </div>
     )
