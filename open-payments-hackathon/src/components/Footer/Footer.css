@@ -1,0 +1,21 @@
+.footer {
+    text-align: center;
+    font-family: monospace;
+    border-top: 1px solid #a3a1a1;
+}
+
+.footer p {
+    margin-top: 30px;
+}
+
+.footer a {
+    opacity: 0.7;
+    color: #fff;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footer a:hover {
+    text-decoration: overline;
+}

@@ -1,0 +1,8 @@
+.container {
+    color: #fff;
+    max-width: 90vw;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
