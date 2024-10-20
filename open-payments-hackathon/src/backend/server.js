@@ -10,8 +10,8 @@ import { Console } from "console";
 const app = express();
 const PORT = 3000; // You can change this port as needed
 
-const DEBIT_AMOUNT = { value: "100", assetCode: "ZAR", assetScale: 2 }; //100;
-const RECEIVE_AMOUNT = { value: "100", assetCode: "ZAR", assetScale: 2 }; //100;
+const DEBIT_AMOUNT = { value: "200", assetCode: "ZAR", assetScale: 2 }; //100;
+const RECEIVE_AMOUNT = { value: "200", assetCode: "ZAR", assetScale: 2 }; //100;
 
 async function setupClient(req, res) {
   try {
