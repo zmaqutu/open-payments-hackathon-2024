@@ -1,5 +1,35 @@
+.user-accounts {
+    max-width: 50%;
+    margin: 30px 0;
+    font-family: monospace;
+    background-color: #fff;
+}
+
 .user-accounts h1{
-    padding: 0 20px;
-    display: inline-block;
+    padding: 4px 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
     background-color: #764ba2;
+}
+
+.users {
+    font-size: 14px;
+    padding: 0 8px;
+    color: #764ba2;
+    padding-bottom: 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #764ba2;
+}
+
+.incomplete {
+    color: red;
+}
+
+.complete {
+    color: green;
+}
+
+.pending {
+    color: yellow;
 }
