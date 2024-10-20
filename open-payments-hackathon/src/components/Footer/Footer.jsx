@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <div className="footer">
-            <p>Made with ❤️ by <a href="#">Zenande Mbane</a>, <a href="#">Ayabulela Pinana</a>, and <a href="#">Zongo Maqutu</a> and is open-sourced on <a href="#">GitHub</a></p>
+            <p>Made with ❤️ by <a href="https://github.com/Averetech">Zenande Mbane</a>, <a href="#">Ayabulela Pinana</a>, and <a href="https://github.com/zmaqutu">Zongo Maqutu</a> and is<a href="https://github.com/zmaqutu/open-payments-hackathon-2024"> open-sourced on GitHub</a></p>
         </div>
     )
 }
