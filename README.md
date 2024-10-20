@@ -92,6 +92,8 @@ This will start all the necessary servers locally on different ports
 1. The customer receives a USSD prompt on their phone with the loan details.
 2. They can accept or reject the loan via the USSD menu.
 3. Once accepted, the loan is processed, and the transaction is recorded.
+
+
 ![image](https://github.com/user-attachments/assets/1b119a68-0066-477a-8694-30ff98373565)
    
 
