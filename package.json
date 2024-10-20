@@ -1,0 +1,13 @@
+{
+  "name": "hackathon-2024",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">GNPL: Get Now, Pay Later via USSD</h1>",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "(cd open-payments-hackathon && npm install) && (cd open-loans-mobile-simulator/client && npm install) && (cd open-loans-mobile-simulator/server && npm install)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
