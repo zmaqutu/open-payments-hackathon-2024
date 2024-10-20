@@ -45,7 +45,7 @@ async function authorizationGrant(req, res) {
     const incomingPayment = await client.incomingPayment.create(
       {
         url: new URL(WALLET_ADRESS).origin,
-        accessToken: grant.access_token.value, // Use the grant's access token
+        accessToken: grant.access_token.value,
       },
       {
         walletAddress: walletAddress.id, // Use the wallet address ID
@@ -55,7 +55,9 @@ async function authorizationGrant(req, res) {
           assetScale: 2,
         },
         expiresAt: new Date(Date.now() + 60_000 * 10).toISOString(),
-      }
+      },
+
+      console.log(WALLET_ADRESS)
     );
 
     console.log("Incoming Payment:", incomingPayment);
