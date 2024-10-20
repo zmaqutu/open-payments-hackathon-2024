@@ -50,9 +50,9 @@ async function authorizationGrant(req, res) {
       {
         walletAddress: walletAddress.id, // Use the wallet address ID
         incomingAmount: {
-          value: "50",
-          assetCode: "USD",
-          assetScale: 2,
+          value: "5000",
+          assetCode: "ZAR",
+          assetScale: 1,
         },
         expiresAt: new Date(Date.now() + 60_000 * 10).toISOString(),
       },

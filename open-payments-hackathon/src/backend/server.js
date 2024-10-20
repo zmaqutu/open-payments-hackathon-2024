@@ -53,17 +53,17 @@ async function setupClient(req, res) {
       }
     );
 
-    const quote = await client.quote.create(
-      {
-        url: new URL(WALLET_ADDRESS).origin,
-        accessToken: QUOTE_ACCESS_TOKEN,
-      },
-      {
-        method: "ilp",
-        walletAddress: WALLET_ADDRESS,
-        receiver: INCOMING_PAYMENT_URL,
-      },
-    );
+    // const quote = await client.quote.create(
+    //   {
+    //     url: new URL(WALLET_ADDRESS).origin,
+    //     accessToken: QUOTE_ACCESS_TOKEN,
+    //   },
+    //   {
+    //     method: "ilp",
+    //     walletAddress: WALLET_ADDRESS,
+    //     receiver: INCOMING_PAYMENT_URL,
+    //   },
+    // );
 
     if (!isPendingGrant(grant)) {
       throw new Error("Expected interactive grant");
