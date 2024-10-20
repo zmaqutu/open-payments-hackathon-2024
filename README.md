@@ -74,34 +74,38 @@ npm run install:all
 Once the dependencies are installed, you can start the development server for the different apps using the following command from the root directory:
 
 ```bash
-npm run dev
+npm run start:all
 ```
 
+This will start all the necessary servers locally on different ports
 ## Usage
 
-### Card Flip Animations
+### 1. Cashier Dashboard
 
--   When interacting with a card by clicking, the user triggers an animation effect. This animation utilizes the capabilities of the React Spring library to smoothly
+1. Navigate to the cashier dashboard (http://localhost:3000/dashboard).
+2. The cashier creates a new profile for the user who wants to make a purchase.
+3. Input details like loan amount, repayment schedule, and grace period.
+4. The user will receive a USSD confirmation request on their mobile phone.
+
+### 2. USSD Loan Confirmation
+1. The customer receives a USSD prompt on their phone with the loan details.
+2. They can accept or reject the loan via the USSD menu.
+3. Once accepted, the loan is processed, and the transaction is recorded.
+
+### 3. Repayment
+1. The user will receive periodic reminders via USSD to repay the loan, with the system automatically adjusting based on the repayment schedule and grace periods.
 
 ### Libraries used
 
 -   React.js
 -   Tailwind CSS
--   React Spring
+-   Firebase
 -   Vite
 
 ## Future Scope
 
--   Implement online play capabilities to enable multiplayer matches and competitions.
--   Introduce an in-game chat feature to facilitate communication between players during gameplay.
--   Develop a leaderboard feature to track high scores and player rankings.
--   Enhance the user interface with customizable themes or card designs.
--   Incorporate sound effects and background music to enhance the gaming experience.
--   Implement an undo feature to allow players to reverse their last move.
--   Introduce power-up cards or special abilities that can be used strategically during gameplay.
--   Explore the possibility of integrating virtual reality (VR) support for an immersive gaming experience.
--   Develop a mobile app version of the game to reach a wider audience and enable on-the-go gameplay.
--   Implement social media integration to allow players to share their achievements and progress with friends.
--   Create a tutorial or interactive guide to help new players learn the game mechanics and strategies.
+- Credit Score Integration: Introduce a basic credit score system based on repayment history.
+- Multilingual USSD Support: Add support for different languages in the USSD flow to make the platform more inclusive.
+- SMS Alerts: Use SMS alerts alongside USSD for better communication with users.
 
 <p align="center">Made with ❤️ in React JS</p>
