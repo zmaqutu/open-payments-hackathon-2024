@@ -12,18 +12,22 @@ import './App.css';
 import { useState } from 'react'
 
 function App() {
-  const [showForm, setShowForm] = useState(false); 
+  const [showForm, setShowForm] = useState(false);
+  const [showManageAccounts, setShowManageAccounts] = useState(false) 
   return (
     <div className='container'>
         <NavBar />
         <div className='middle-section'>
-        <SideView setShowForm={setShowForm}/>
+        <SideView setShowForm={setShowForm} setShowManageAccounts={setShowManageAccounts}/>
         {
-          showForm ?
+          showForm && !showManageAccounts ?
           <AddUserForm />
           : null
+        }{
+          showManageAccounts ?
+            <ManageAccounts /> :
+            null
         }
-        <ManageAccounts />
         </div>
         
         <Footer />
