@@ -5,8 +5,37 @@ function USSDPopup(props) {
 	console.log(props)
 	const [input, setInput] = useState('');
 
-	const handleSend = () => {
+	const handleSend = async (input) => {
 		console.log('USSD Input:', input);
+		switch (input) {
+			case '1':
+				console.log('Accepted Loan Terms');
+				try {
+					// Send a request to the server to trigger the popup
+					const response = await fetch('http://localhost:5001/process-payment', {
+						method: 'GET', // Use GET if that's how your server is set up
+					});
+
+					if (response.ok) {
+						// If the response is okay, the server should handle showing the popup
+						console.log('Payment processing initiated');
+					} else {
+						console.error('Failed');
+					}
+				} catch (error) {
+					console.error('Error:', error);
+				}
+				break;
+			case '2':
+				console.log('Declined Loan Offer');
+				break;
+			case '3':
+				console.log('Adjust Loan Application');
+				break;
+			default:
+				console.log('Invalid option');
+				break;
+		}
 		// handleClose(); // Close popup after sending
 	};
 	return (
