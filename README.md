@@ -71,7 +71,7 @@ npm run install:all
 
 ## Running the Application locally
 
-Once the dependencies are installed, you can start the development server using the following command:
+Once the dependencies are installed, you can start the development server for the different apps using the following command from the root directory:
 
 ```bash
 npm run dev

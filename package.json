@@ -4,10 +4,14 @@
   "description": "<h1 align=\"center\">GNPL: Get Now, Pay Later via USSD</h1>",
   "main": "index.js",
   "scripts": {
-    "install:all": "(cd open-payments-hackathon && npm install) && (cd open-loans-mobile-simulator/client && npm install) && (cd open-loans-mobile-simulator/server && npm install)",
+    "install:all": "(npm install) && (cd open-payments-hackathon && npm install) && (cd open-loans-mobile-simulator/client && npm install) && (cd open-loans-mobile-simulator/server && npm install)",
+    "start:all": "concurrently \"cd open-payments-hackathon && npm run dev\" \"cd open-loans-mobile-simulator/client && npm run dev\" \"cd open-loans-mobile-simulator/server && node server.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Zongo Maqutu",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
 }
