@@ -32,7 +32,7 @@ The cashier initiates the process via a dashboard where user profiles can be cre
 
 - React: Used to build the cashier dashboard where users are registered, and loan terms are set.
 
--Tailwind CSS: Provides a modern and responsive user interface for the dashboard.
+- Tailwind CSS: Provides a modern and responsive user interface for the dashboard.
 
 ### Backend
 
