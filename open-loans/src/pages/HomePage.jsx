@@ -1,4 +1,5 @@
 import SideNav from "../components/SideNav/SideNav";
+import "./pages.css";
 
 const HomePage = () => {
   return (
